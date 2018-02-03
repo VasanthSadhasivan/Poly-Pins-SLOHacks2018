@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D11EAAE2A9DB56CD7760F73 /* Pods_SLOHacks2018.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA89A749081B5382058378B4 /* Pods_SLOHacks2018.framework */; };
+		79BA025F55C9C246AF6FFE88 /* Pods_SLOHacks2018Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7BD9CCB5912AA8CE504CA8 /* Pods_SLOHacks2018Tests.framework */; };
+		EF2E79B009295B21628AF665 /* Pods_SLOHacks2018UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE52AD0FA0E98192196A7DC /* Pods_SLOHacks2018UITests.framework */; };
 		FF3B00A02025A70600299B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B009F2025A70600299B89 /* AppDelegate.swift */; };
 		FF3B00A22025A70600299B89 /* Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FF3B00A12025A70600299B89 /* Scene.sks */; };
 		FF3B00A42025A70600299B89 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B00A32025A70600299B89 /* Scene.swift */; };
@@ -16,6 +19,9 @@
 		FF3B00AE2025A70600299B89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF3B00AC2025A70600299B89 /* LaunchScreen.storyboard */; };
 		FF3B00B92025A70600299B89 /* SLOHacks2018Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B00B82025A70600299B89 /* SLOHacks2018Tests.swift */; };
 		FF3B00C42025A70700299B89 /* SLOHacks2018UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B00C32025A70700299B89 /* SLOHacks2018UITests.swift */; };
+		FF719B022026597100EE5E32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF719B012026597100EE5E32 /* GoogleService-Info.plist */; };
+		FF719B032026597100EE5E32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF719B012026597100EE5E32 /* GoogleService-Info.plist */; };
+		FF719B042026597100EE5E32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF719B012026597100EE5E32 /* GoogleService-Info.plist */; };
 		FF8281062025BFC600ECFAB0 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8281052025BFC600ECFAB0 /* Place.swift */; };
 		FF8281082026271D00ECFAB0 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8281072026271D00ECFAB0 /* Helper.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +44,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B7BD9CCB5912AA8CE504CA8 /* Pods_SLOHacks2018Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SLOHacks2018Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FE52AD0FA0E98192196A7DC /* Pods_SLOHacks2018UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SLOHacks2018UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55D865B7018F65A8D6568C51 /* Pods-SLOHacks2018.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLOHacks2018.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SLOHacks2018/Pods-SLOHacks2018.debug.xcconfig"; sourceTree = "<group>"; };
+		71A924D035F7FD67F8E3CEE5 /* Pods-SLOHacks2018.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLOHacks2018.release.xcconfig"; path = "Pods/Target Support Files/Pods-SLOHacks2018/Pods-SLOHacks2018.release.xcconfig"; sourceTree = "<group>"; };
+		7B6800073382671783E09A42 /* Pods-SLOHacks2018UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLOHacks2018UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SLOHacks2018UITests/Pods-SLOHacks2018UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BA01C937D147E4D9F5855882 /* Pods-SLOHacks2018Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLOHacks2018Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SLOHacks2018Tests/Pods-SLOHacks2018Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		EDC1F1DBCC63A30301A7EC6C /* Pods-SLOHacks2018UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLOHacks2018UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SLOHacks2018UITests/Pods-SLOHacks2018UITests.release.xcconfig"; sourceTree = "<group>"; };
+		FA89A749081B5382058378B4 /* Pods_SLOHacks2018.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SLOHacks2018.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE1A92139D61C9D2766926A7 /* Pods-SLOHacks2018Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLOHacks2018Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SLOHacks2018Tests/Pods-SLOHacks2018Tests.release.xcconfig"; sourceTree = "<group>"; };
 		FF3B009C2025A70600299B89 /* SLOHacks2018.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLOHacks2018.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF3B009F2025A70600299B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF3B00A12025A70600299B89 /* Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene.sks; sourceTree = "<group>"; };
@@ -53,6 +68,7 @@
 		FF3B00BF2025A70700299B89 /* SLOHacks2018UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SLOHacks2018UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF3B00C32025A70700299B89 /* SLOHacks2018UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLOHacks2018UITests.swift; sourceTree = "<group>"; };
 		FF3B00C52025A70700299B89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF719B012026597100EE5E32 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF8281052025BFC600ECFAB0 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		FF8281072026271D00ECFAB0 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D11EAAE2A9DB56CD7760F73 /* Pods_SLOHacks2018.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79BA025F55C9C246AF6FFE88 /* Pods_SLOHacks2018Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +94,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF2E79B009295B21628AF665 /* Pods_SLOHacks2018UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5BBD34CC6CA3BFEE181D0B0A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				55D865B7018F65A8D6568C51 /* Pods-SLOHacks2018.debug.xcconfig */,
+				71A924D035F7FD67F8E3CEE5 /* Pods-SLOHacks2018.release.xcconfig */,
+				BA01C937D147E4D9F5855882 /* Pods-SLOHacks2018Tests.debug.xcconfig */,
+				FE1A92139D61C9D2766926A7 /* Pods-SLOHacks2018Tests.release.xcconfig */,
+				7B6800073382671783E09A42 /* Pods-SLOHacks2018UITests.debug.xcconfig */,
+				EDC1F1DBCC63A30301A7EC6C /* Pods-SLOHacks2018UITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DF2A30DC4F2B40E39FAAD29B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA89A749081B5382058378B4 /* Pods_SLOHacks2018.framework */,
+				4B7BD9CCB5912AA8CE504CA8 /* Pods_SLOHacks2018Tests.framework */,
+				4FE52AD0FA0E98192196A7DC /* Pods_SLOHacks2018UITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FF3B00932025A70600299B89 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +131,8 @@
 				FF3B00B72025A70600299B89 /* SLOHacks2018Tests */,
 				FF3B00C22025A70700299B89 /* SLOHacks2018UITests */,
 				FF3B009D2025A70600299B89 /* Products */,
+				5BBD34CC6CA3BFEE181D0B0A /* Pods */,
+				DF2A30DC4F2B40E39FAAD29B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +149,7 @@
 		FF3B009E2025A70600299B89 /* SLOHacks2018 */ = {
 			isa = PBXGroup;
 			children = (
+				FF719B012026597100EE5E32 /* GoogleService-Info.plist */,
 				FF3B009F2025A70600299B89 /* AppDelegate.swift */,
 				FF8281032025BF9300ECFAB0 /* Objects */,
 				FF8281022025BF5100ECFAB0 /* Main */,
@@ -160,9 +205,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF3B00C82025A70700299B89 /* Build configuration list for PBXNativeTarget "SLOHacks2018" */;
 			buildPhases = (
+				96E102B7BDFDC3AD3F28A081 /* [CP] Check Pods Manifest.lock */,
 				FF3B00982025A70600299B89 /* Sources */,
 				FF3B00992025A70600299B89 /* Frameworks */,
 				FF3B009A2025A70600299B89 /* Resources */,
+				40063F040A2073EBD84C02F4 /* [CP] Embed Pods Frameworks */,
+				CC7967094CA007E7CC762AAC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,9 +225,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF3B00CB2025A70700299B89 /* Build configuration list for PBXNativeTarget "SLOHacks2018Tests" */;
 			buildPhases = (
+				AB3C49C4BB3D1793C5C6CD71 /* [CP] Check Pods Manifest.lock */,
 				FF3B00B02025A70600299B89 /* Sources */,
 				FF3B00B12025A70600299B89 /* Frameworks */,
 				FF3B00B22025A70600299B89 /* Resources */,
+				AAADA762F87EBE0FFC1F3B30 /* [CP] Embed Pods Frameworks */,
+				7987236815C6580B68301077 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,9 +246,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF3B00CE2025A70700299B89 /* Build configuration list for PBXNativeTarget "SLOHacks2018UITests" */;
 			buildPhases = (
+				1E6965E1E75C83249AE163F9 /* [CP] Check Pods Manifest.lock */,
 				FF3B00BB2025A70600299B89 /* Sources */,
 				FF3B00BC2025A70600299B89 /* Frameworks */,
 				FF3B00BD2025A70600299B89 /* Resources */,
+				AF3E0B93A85F52E9791358D8 /* [CP] Embed Pods Frameworks */,
+				6EC743C4C459280DADC4D5E8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,6 +316,7 @@
 			files = (
 				FF3B00A22025A70600299B89 /* Scene.sks in Resources */,
 				FF3B00AE2025A70600299B89 /* LaunchScreen.storyboard in Resources */,
+				FF719B022026597100EE5E32 /* GoogleService-Info.plist in Resources */,
 				FF3B00AB2025A70600299B89 /* Assets.xcassets in Resources */,
 				FF3B00A92025A70600299B89 /* Main.storyboard in Resources */,
 			);
@@ -271,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF719B032026597100EE5E32 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,10 +334,173 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF719B042026597100EE5E32 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E6965E1E75C83249AE163F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SLOHacks2018UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40063F040A2073EBD84C02F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SLOHacks2018/Pods-SLOHacks2018-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SLOHacks2018/Pods-SLOHacks2018-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6EC743C4C459280DADC4D5E8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SLOHacks2018UITests/Pods-SLOHacks2018UITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7987236815C6580B68301077 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SLOHacks2018Tests/Pods-SLOHacks2018Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96E102B7BDFDC3AD3F28A081 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SLOHacks2018-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAADA762F87EBE0FFC1F3B30 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SLOHacks2018Tests/Pods-SLOHacks2018Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SLOHacks2018Tests/Pods-SLOHacks2018Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB3C49C4BB3D1793C5C6CD71 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SLOHacks2018Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF3E0B93A85F52E9791358D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SLOHacks2018UITests/Pods-SLOHacks2018UITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SLOHacks2018UITests/Pods-SLOHacks2018UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC7967094CA007E7CC762AAC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SLOHacks2018/Pods-SLOHacks2018-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FF3B00982025A70600299B89 /* Sources */ = {
@@ -456,6 +675,7 @@
 		};
 		FF3B00C92025A70700299B89 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55D865B7018F65A8D6568C51 /* Pods-SLOHacks2018.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -473,6 +693,7 @@
 		};
 		FF3B00CA2025A70700299B89 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71A924D035F7FD67F8E3CEE5 /* Pods-SLOHacks2018.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -490,6 +711,7 @@
 		};
 		FF3B00CC2025A70700299B89 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA01C937D147E4D9F5855882 /* Pods-SLOHacks2018Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -507,6 +729,7 @@
 		};
 		FF3B00CD2025A70700299B89 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE1A92139D61C9D2766926A7 /* Pods-SLOHacks2018Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -524,6 +747,7 @@
 		};
 		FF3B00CF2025A70700299B89 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B6800073382671783E09A42 /* Pods-SLOHacks2018UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -540,6 +764,7 @@
 		};
 		FF3B00D02025A70700299B89 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDC1F1DBCC63A30301A7EC6C /* Pods-SLOHacks2018UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

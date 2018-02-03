@@ -9,6 +9,7 @@
 import UIKit
 import SpriteKit
 import ARKit
+import Firebase
 
 class ViewController: UIViewController, ARSKViewDelegate {
     
@@ -16,29 +17,13 @@ class ViewController: UIViewController, ARSKViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Set the view's delegate
-        sceneView.delegate = self
-        
-        // Show statistics such as fps and node count
-        sceneView.showsFPS = true
-        sceneView.showsNodeCount = true
-        
-        // Load the SKScene from 'Scene.sks'
-        if let scene = SKScene(fileNamed: "Scene") {
-            sceneView.presentScene(scene)
-        }
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        Helper.sceneViewSetup(delegate: self, sceneView: sceneView)
         
-        // Create a session configuration
-        let configuration = ARWorldTrackingConfiguration()
-        configuration.worldAlignment = .gravityAndHeading
-        
-        // Run the view's session
-        sceneView.session.run(configuration)
     }
     
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
