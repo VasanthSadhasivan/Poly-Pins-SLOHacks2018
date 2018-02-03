@@ -51,4 +51,21 @@ class Helper{
         }
     }
     
+    static func sceneViewSetup(delegate : ARSKViewDelegate, sceneView : ARSKView){
+        sceneView.delegate = delegate
+        sceneView.showsFPS = true
+        sceneView.showsNodeCount = true
+        
+        // Load the SKScene from 'Scene.sks'
+        if let scene = SKScene(fileNamed: "Scene") {
+            sceneView.presentScene(scene)
+        }
+        
+        // Create a session configuration
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.worldAlignment = .gravityAndHeading
+        
+        // Run the view's session
+        sceneView.session.run(configuration)
+    }
 }
