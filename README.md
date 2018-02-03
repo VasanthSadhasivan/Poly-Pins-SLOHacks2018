@@ -1,2 +1,3 @@
 # SLOHacks2018
-wassup
+var hello = 5
+
