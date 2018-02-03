@@ -68,4 +68,8 @@ class Helper{
         // Run the view's session
         sceneView.session.run(configuration)
     }
+    
+    static func calcARAnchors(){
+        
+    }
 }
