@@ -18,6 +18,7 @@ class Helper{
     
     static let locationManager : CLLocationManager = CLLocationManager()
     static var myLocation : CLLocation? = nil
+    static var places : [Place]? = nil
     
     static func createTransformationMatrix(distance : Float, azimuth : Float, floor : Int) -> matrix_float4x4 {
         let translationMatrix = GLKMatrix4MakeTranslation(0, Float(floor * -10), -1 * distance)
@@ -53,6 +54,7 @@ class Helper{
         }
     }
     
+<<<<<<< HEAD
     
     static func getAPlace(name : String) -> Place {
         let dataname = Database.database().reference()
@@ -91,6 +93,25 @@ class Helper{
         
     }
     
+=======
+    static func sceneViewSetup(delegate : ARSKViewDelegate, sceneView : ARSKView){
+        sceneView.delegate = delegate
+        sceneView.showsFPS = true
+        sceneView.showsNodeCount = true
+        
+        // Load the SKScene from 'Scene.sks'
+        if let scene = SKScene(fileNamed: "Scene") {
+            sceneView.presentScene(scene)
+        }
+        
+        // Create a session configuration
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.worldAlignment = .gravityAndHeading
+        
+        // Run the view's session
+        sceneView.session.run(configuration)
+    }
+>>>>>>> b8f01c87fc1253ac653f02e84f34526f7ae65fd8
 }
 
 
