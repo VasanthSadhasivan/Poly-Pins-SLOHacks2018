@@ -9,6 +9,9 @@
 import Foundation
 import GLKit
 import ARKit
+import Firebase
+import FirebaseDatabase
+import FirebaseCore
 import CoreLocation
 
 class Helper{
@@ -50,4 +53,50 @@ class Helper{
         }
     }
     
+    
+    static func getAPlace(name : String) -> Place {
+        let dataname = Database.database().reference()
+        let place: Place
+        
+        //print(observeDay)
+        dataname.child(name).child("imageURL").observe(.value) {
+            (data: DataSnapshot) in
+            //print (data)
+            place.imageURL = data.value as? String
+        }
+        dataname.child(name).child("latitude").observe(.value) {
+            (data: DataSnapshot) in
+            //print (data)
+            place.latitude = data.value as? Float
+        }
+        dataname.child(name).child("longitude").observe(.value) {
+            (data: DataSnapshot) in
+            //print (data)
+            place.longitude = data.value as? Float
+        }
+        
+        return place
+    }
+    
+    static func getPlaces() {
+        let dataname = Database.database().reference()
+        var places : [Place] = [Place]()
+        print (data)
+        dataname.observe(.value) {
+            (data: DataSnapshot) in
+            print(data)
+            tempplace = data.value as? String
+            places.append(getAPlace(tempplace))
+        }
+        
+    }
+    
 }
+
+
+
+
+
+
+
+
