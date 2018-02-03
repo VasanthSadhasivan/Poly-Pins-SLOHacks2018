@@ -78,14 +78,14 @@ class Helper{
     
     static func calcualateLatLongDist(lat_01: Float, lon_01: Float, lat_02: Float, lon_02: Float)
     {
-        var eRadius : Float = 6371008                           // mean volumetric radius (m) nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
-        var dLat : Float    = deg2rad(lat_02-lat_01);           // Calc radians between two latidual points using the function   deg2rad [ below ]
-        var dLon : Float    = deg2rad(lon_02-lon_01);           // Same but with long
+        var eRadius : Float = 6371008                          // mean volumetric radius (m) nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
+        var dLat : Float    = deg2rad(lat_02-lat_01)           // Calc radians between two latidual points using the function   deg2rad [ below ]
+        var dLon : Float    = deg2rad(lon_02-lon_01)           // Same but with long
         var a : Float       = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(deg2rad(lat_01)) * Math.cos(deg2rad(lat_02)) * Math.sin(dLon/2) * Math.sin(dLon/2)
-        ;
-        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-        var d = R * c; // Distance in km
-        return d;
+        
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a))
+        var d = R * c // Distance in km
+        return d
     }
     
     static func deg2rad(deg: Float)
