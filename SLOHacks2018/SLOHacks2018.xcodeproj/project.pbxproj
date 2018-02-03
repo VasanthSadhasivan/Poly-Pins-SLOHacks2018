@@ -19,9 +19,11 @@
 		FF3B00AE2025A70600299B89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF3B00AC2025A70600299B89 /* LaunchScreen.storyboard */; };
 		FF3B00B92025A70600299B89 /* SLOHacks2018Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B00B82025A70600299B89 /* SLOHacks2018Tests.swift */; };
 		FF3B00C42025A70700299B89 /* SLOHacks2018UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B00C32025A70700299B89 /* SLOHacks2018UITests.swift */; };
+		FF719B022026597100EE5E32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF719B012026597100EE5E32 /* GoogleService-Info.plist */; };
+		FF719B032026597100EE5E32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF719B012026597100EE5E32 /* GoogleService-Info.plist */; };
+		FF719B042026597100EE5E32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF719B012026597100EE5E32 /* GoogleService-Info.plist */; };
 		FF8281062025BFC600ECFAB0 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8281052025BFC600ECFAB0 /* Place.swift */; };
 		FF8281082026271D00ECFAB0 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8281072026271D00ECFAB0 /* Helper.swift */; };
-		FF82810A202656B800ECFAB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF828109202656B800ECFAB0 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,9 +68,9 @@
 		FF3B00BF2025A70700299B89 /* SLOHacks2018UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SLOHacks2018UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF3B00C32025A70700299B89 /* SLOHacks2018UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLOHacks2018UITests.swift; sourceTree = "<group>"; };
 		FF3B00C52025A70700299B89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF719B012026597100EE5E32 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF8281052025BFC600ECFAB0 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		FF8281072026271D00ECFAB0 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		FF828109202656B800ECFAB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +149,7 @@
 		FF3B009E2025A70600299B89 /* SLOHacks2018 */ = {
 			isa = PBXGroup;
 			children = (
-				FF828109202656B800ECFAB0 /* GoogleService-Info.plist */,
+				FF719B012026597100EE5E32 /* GoogleService-Info.plist */,
 				FF3B009F2025A70600299B89 /* AppDelegate.swift */,
 				FF8281032025BF9300ECFAB0 /* Objects */,
 				FF8281022025BF5100ECFAB0 /* Main */,
@@ -314,7 +316,7 @@
 			files = (
 				FF3B00A22025A70600299B89 /* Scene.sks in Resources */,
 				FF3B00AE2025A70600299B89 /* LaunchScreen.storyboard in Resources */,
-				FF82810A202656B800ECFAB0 /* GoogleService-Info.plist in Resources */,
+				FF719B022026597100EE5E32 /* GoogleService-Info.plist in Resources */,
 				FF3B00AB2025A70600299B89 /* Assets.xcassets in Resources */,
 				FF3B00A92025A70600299B89 /* Main.storyboard in Resources */,
 			);
@@ -324,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF719B032026597100EE5E32 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF719B042026597100EE5E32 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
