@@ -1,4 +1,5 @@
 # SLOHacks2018
-var hello = 5
-var hello = "a bamf"
-fhadslfa;lsj
+---------------- RESOURCES ------------------
+https://medium.com/@yatchoi/getting-started-with-arkit-real-life-waypoints-1707e3cb1da2
+
+---------------------------------------------
