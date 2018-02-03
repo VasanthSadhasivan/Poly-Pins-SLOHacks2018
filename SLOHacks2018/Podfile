@@ -8,6 +8,8 @@ target 'SLOHacks2018' do
   # Pods for SLOHacks2018 
 
   pod 'Firebase/Core'
+  pod 'Firebase'
+  pod 'Firebase/Database'
 
   target 'SLOHacks2018Tests' do
     inherit! :search_paths
