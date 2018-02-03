@@ -9,8 +9,13 @@
 import Foundation
 import GLKit
 import ARKit
+import CoreLocation
 
 class Helper{
+    
+    static let locationManager : CLLocationManager = CLLocationManager()
+    static var myLocation : CLLocation? = nil
+    
     static func createTransformationMatrix(distance : Float, azimuth : Float, floor : Int) -> matrix_float4x4 {
         let translationMatrix = GLKMatrix4MakeTranslation(0, Float(floor * -10), -1 * distance)
         let rotationMatrix = GLKMatrix4MakeYRotation(GLKMathDegreesToRadians(360-(azimuth)))
@@ -31,6 +36,18 @@ class Helper{
         azimuth = GLKMathRadiansToDegrees(Float(radiansBearing))
         if(azimuth < 0) { azimuth += 360 }
         return azimuth
+    }
+    
+    static func startLocationService(delegate : CLLocationManagerDelegate){
+        // For use in foreground
+        locationManager.stopUpdatingLocation()
+        myLocation = nil
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = delegate
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
     }
     
 }

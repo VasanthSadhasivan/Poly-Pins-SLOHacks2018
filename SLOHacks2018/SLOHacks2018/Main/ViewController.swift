@@ -9,6 +9,7 @@
 import UIKit
 import SpriteKit
 import ARKit
+import Firebase
 
 class ViewController: UIViewController, ARSKViewDelegate {
     
@@ -16,11 +17,7 @@ class ViewController: UIViewController, ARSKViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Set the view's delegate
         sceneView.delegate = self
-        
-        // Show statistics such as fps and node count
         sceneView.showsFPS = true
         sceneView.showsNodeCount = true
         
