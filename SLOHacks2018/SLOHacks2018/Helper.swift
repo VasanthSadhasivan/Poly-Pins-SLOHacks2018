@@ -1,0 +1,35 @@
+//
+//  Helper.swift
+//  SLOHacks2018
+//
+//  Created by Vasanth Sadhasivan on 2/3/18.
+//  Copyright © 2018 Vasanth Sadhasivan. All rights reserved.
+//
+
+import Foundation
+import GLKit
+import ARKit
+
+class Helper{
+    static func createTransformationMatrix(distance : Float, azimuth : Float, floor : Int) -> matrix_float4x4 {
+        let translationMatrix = GLKMatrix4MakeTranslation(0, Float(floor * -10), -1 * distance)
+        let rotationMatrix = GLKMatrix4MakeYRotation(GLKMathDegreesToRadians(360-(azimuth)))
+        return float4x4((SCNMatrix4FromGLKMatrix4(GLKMatrix4Multiply(rotationMatrix, translationMatrix))))
+    }
+    
+    static func calculateAzimuth(startLocationLatitude : Float, startLocationLongitude : Float, endLocationLatitude : Float, endLocationLongitude : Float) -> Float {
+        var azimuth: Float = 0
+        let lat1 = GLKMathDegreesToRadians(startLocationLatitude)
+        let lon1 = GLKMathDegreesToRadians(startLocationLongitude)
+        let lat2 = GLKMathDegreesToRadians(endLocationLatitude)
+        let lon2 = GLKMathDegreesToRadians(endLocationLongitude)
+        let dLon = lon2 - lon1
+        let y = sin(dLon) * cos(lat2)
+        let x = cos(lat1) * sin(lat2) - sin(lat1) * cos(lat2) * cos(dLon)
+        let radiansBearing = atan2(y, x)
+        azimuth = GLKMathRadiansToDegrees(Float(radiansBearing))
+        if(azimuth < 0) { azimuth += 360 }
+        return azimuth
+    }
+    
+}

@@ -17,6 +17,7 @@
 		FF3B00B92025A70600299B89 /* SLOHacks2018Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B00B82025A70600299B89 /* SLOHacks2018Tests.swift */; };
 		FF3B00C42025A70700299B89 /* SLOHacks2018UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B00C32025A70700299B89 /* SLOHacks2018UITests.swift */; };
 		FF8281062025BFC600ECFAB0 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8281052025BFC600ECFAB0 /* Place.swift */; };
+		FF8281082026271D00ECFAB0 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8281072026271D00ECFAB0 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		FF3B00C32025A70700299B89 /* SLOHacks2018UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLOHacks2018UITests.swift; sourceTree = "<group>"; };
 		FF3B00C52025A70700299B89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF8281052025BFC600ECFAB0 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		FF8281072026271D00ECFAB0 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +105,14 @@
 		FF3B009E2025A70600299B89 /* SLOHacks2018 */ = {
 			isa = PBXGroup;
 			children = (
+				FF3B009F2025A70600299B89 /* AppDelegate.swift */,
 				FF8281032025BF9300ECFAB0 /* Objects */,
 				FF8281022025BF5100ECFAB0 /* Main */,
 				FF3B00A72025A70600299B89 /* Main.storyboard */,
 				FF3B00AA2025A70600299B89 /* Assets.xcassets */,
 				FF3B00AC2025A70600299B89 /* LaunchScreen.storyboard */,
 				FF3B00AF2025A70600299B89 /* Info.plist */,
+				FF8281072026271D00ECFAB0 /* Helper.swift */,
 			);
 			path = SLOHacks2018;
 			sourceTree = "<group>";
@@ -136,7 +140,6 @@
 			children = (
 				FF3B00A12025A70600299B89 /* Scene.sks */,
 				FF3B00A32025A70600299B89 /* Scene.swift */,
-				FF3B009F2025A70600299B89 /* AppDelegate.swift */,
 				FF3B00A52025A70600299B89 /* ViewController.swift */,
 			);
 			path = Main;
@@ -287,6 +290,7 @@
 			files = (
 				FF3B00A62025A70600299B89 /* ViewController.swift in Sources */,
 				FF3B00A42025A70600299B89 /* Scene.swift in Sources */,
+				FF8281082026271D00ECFAB0 /* Helper.swift in Sources */,
 				FF3B00A02025A70600299B89 /* AppDelegate.swift in Sources */,
 				FF8281062025BFC600ECFAB0 /* Place.swift in Sources */,
 			);
