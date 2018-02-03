@@ -54,27 +54,25 @@ class Helper{
         }
     }
     
-<<<<<<< HEAD
-    
     static func getAPlace(name : String) -> Place {
         let dataname = Database.database().reference()
-        let place: Place
+        var place: Place = Place(name: name, latitude: 0, longitude: 0, anchor: nil, imageURL: "")
         
         //print(observeDay)
         dataname.child(name).child("imageURL").observe(.value) {
             (data: DataSnapshot) in
             //print (data)
-            place.imageURL = data.value as? String
+            place.imageURL = (data.value as? String)!
         }
         dataname.child(name).child("latitude").observe(.value) {
             (data: DataSnapshot) in
             //print (data)
-            place.latitude = data.value as? Float
+            place.latitude = (data.value as? Double)!
         }
         dataname.child(name).child("longitude").observe(.value) {
             (data: DataSnapshot) in
             //print (data)
-            place.longitude = data.value as? Float
+            place.longitude = (data.value as? Double)!
         }
         
         return place
@@ -83,17 +81,16 @@ class Helper{
     static func getPlaces() {
         let dataname = Database.database().reference()
         var places : [Place] = [Place]()
-        print (data)
         dataname.observe(.value) {
             (data: DataSnapshot) in
             print(data)
-            tempplace = data.value as? String
-            places.append(getAPlace(tempplace))
+            var tempplace = data.value as? String
+            print(getAPlace(name: tempplace!).getName())
+            places.append(getAPlace(name: tempplace!))
         }
         
     }
     
-=======
     static func sceneViewSetup(delegate : ARSKViewDelegate, sceneView : ARSKView){
         sceneView.delegate = delegate
         sceneView.showsFPS = true
@@ -111,14 +108,10 @@ class Helper{
         // Run the view's session
         sceneView.session.run(configuration)
     }
-<<<<<<< HEAD
     
     static func calcARAnchors(){
         
     }
-=======
->>>>>>> b8f01c87fc1253ac653f02e84f34526f7ae65fd8
->>>>>>> e245d24ac812f2d1674200ad48923230085223ac
 }
 
 
