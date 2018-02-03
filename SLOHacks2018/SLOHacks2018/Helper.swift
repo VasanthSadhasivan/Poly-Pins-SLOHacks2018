@@ -15,6 +15,7 @@ class Helper{
     
     static let locationManager : CLLocationManager = CLLocationManager()
     static var myLocation : CLLocation? = nil
+    static var places : [Place]? = nil
     
     static func createTransformationMatrix(distance : Float, azimuth : Float, floor : Int) -> matrix_float4x4 {
         let translationMatrix = GLKMatrix4MakeTranslation(0, Float(floor * -10), -1 * distance)
