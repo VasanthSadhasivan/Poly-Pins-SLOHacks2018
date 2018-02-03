@@ -9,6 +9,9 @@
 import Foundation
 import GLKit
 import ARKit
+import Firebase
+import FirebaseDatabase
+import FirebaseCore
 import CoreLocation
 import Math
 
@@ -55,9 +58,45 @@ class Helper{
             locationManager.startUpdatingLocation()
         }
     }
+
+    static func getAPlace(name : String) -> Place {
+        let dataname = Database.database().reference()
+        let place: Place
+        
+        //print(observeDay)
+        dataname.child(name).child("imageURL").observe(.value) {
+            (data: DataSnapshot) in
+            //print (data)
+            place.imageURL = data.value as? String
+        }
+        dataname.child(name).child("latitude").observe(.value) {
+            (data: DataSnapshot) in
+            //print (data)
+            place.latitude = data.value as? Float
+        }
+        dataname.child(name).child("longitude").observe(.value) {
+            (data: DataSnapshot) in
+            //print (data)
+            place.longitude = data.value as? Float
+        }
+        
+        return place
+    }
     
-    static func sceneViewSetup(delegate : ARSKViewDelegate, sceneView : ARSKView)
-    {
+    static func getPlaces() {
+        let dataname = Database.database().reference()
+        var places : [Place] = [Place]()
+        print (data)
+        dataname.observe(.value) {
+            (data: DataSnapshot) in
+            print(data)
+            tempplace = data.value as? String
+            places.append(getAPlace(tempplace))
+        }
+        
+    }
+    
+    static func sceneViewSetup(delegate : ARSKViewDelegate, sceneView : ARSKView){
         sceneView.delegate = delegate
         sceneView.showsFPS = true
         sceneView.showsNodeCount = true
@@ -75,7 +114,7 @@ class Helper{
         // Run the view's session
         sceneView.session.run(configuration)
     }
-    
+
     static func calcualateLatLongDist(lat_01: Float, lon_01: Float, lat_02: Float, lon_02: Float)
     {
         var eRadius : Float = 6371008                          // mean volumetric radius (m) nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
@@ -93,4 +132,17 @@ class Helper{
         return deg * (Math.PI/180)
     }
 
+
+    static func calcARAnchors(){
+        
+    }
+
 }
+
+
+
+
+
+
+
+
