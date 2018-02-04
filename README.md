@@ -1,4 +1,4 @@
-# SLOHacks2018
+# SLOHacks2018 - Poly Pins
 
 Created by: Vasanth Sadhasivan, Hunter Morse, Angello Parrolivelli, and Finn Childress
 
