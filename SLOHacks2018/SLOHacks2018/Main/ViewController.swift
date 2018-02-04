@@ -30,10 +30,11 @@ class ViewController: UIViewController, ARSKViewDelegate, CLLocationManagerDeleg
     
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
         // Create and configure a node for the anchor added to the view's session.
-        let labelNode = SKLabelNode(text: "👾")
-        labelNode.fontSize = labelNode.fontSize*5
+        let labelNode = SKLabelNode(text: "🚻")
+        labelNode.fontSize = labelNode.fontSize*250
         labelNode.horizontalAlignmentMode = .center
         labelNode.verticalAlignmentMode = .center
+        print("here")
 
         return labelNode;
     }
@@ -49,6 +50,10 @@ class ViewController: UIViewController, ARSKViewDelegate, CLLocationManagerDeleg
         let distance = newLocation.distance(from: currentLocation!)
         print(distance)
         if distance > 10{
+            let configuration = ARWorldTrackingConfiguration()
+            configuration.worldAlignment = .gravityAndHeading
+            sceneView.session.run(configuration, options: .resetTracking)
+            
             Helper.myLocation = newLocation
             Helper.deleteOldAnchors(sceneView: sceneView)
             Helper.calcARAnchors(sceneView: sceneView)
