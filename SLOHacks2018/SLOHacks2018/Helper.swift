@@ -22,6 +22,7 @@ class Helper{
     static var databaseReference : DatabaseReference!
     static var anchorDicked = [UUID : Place]()
     static var donePullingFBData = false
+    static var filterType : String? = nil
     
     static func createTransformationMatrix(distance : Float, azimuth : Float, floor : Int) -> matrix_float4x4
     {
@@ -62,18 +63,38 @@ class Helper{
     }
     
     static func getPlaces(sceneView : ARSKView) {
+        
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.worldAlignment = .gravityAndHeading
+        sceneView.session.run(configuration, options: .resetTracking)
+        
+        places?.removeAll()
+        deleteOldAnchors(sceneView: sceneView)
+        anchorDicked.removeAll()
+        
         databaseReference = Database.database().reference()
         
         databaseReference.observeSingleEvent(of: .value, with: { (data) in
 
             for child in data.children.allObjects{
+                
                 let name : String = ((child as! DataSnapshot).key) as String
                 let imageURL : String = (((child as! DataSnapshot).children.allObjects[0] as! DataSnapshot).value) as! String
                 let latitude : Float = (((child as! DataSnapshot).children.allObjects[1] as! DataSnapshot).value) as! Float
                 let longitude : Float = (((child as! DataSnapshot).children.allObjects[2] as! DataSnapshot).value) as! Float
+                let type : String = (((child as! DataSnapshot).children.allObjects[3] as! DataSnapshot).value) as! String
                 
-                places?.append(Place(name: name, latitude: Double(latitude), longitude: Double(longitude), anchor: nil, imageURL: imageURL))
+                if filterType == nil{
+                    places?.append(Place(name: name, latitude: Double(latitude), longitude: Double(longitude), anchor: nil, imageURL: imageURL, type: type))
+                }
+                
+                else{
+                    if type == filterType{
+                        places?.append(Place(name: name, latitude: Double(latitude), longitude: Double(longitude), anchor: nil, imageURL: imageURL, type: type))
+                    }
+                }
             }
+            
             donePullingFBData = true
             calcARAnchors(sceneView: sceneView)
             

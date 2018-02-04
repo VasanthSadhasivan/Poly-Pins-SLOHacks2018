@@ -15,6 +15,10 @@ import CoreLocation
 class ViewController: UIViewController, ARSKViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet var sceneView: ARSKView!
+    @IBAction func Food(_ sender: Any) {
+        Helper.filterType = "food"
+        Helper.getPlaces(sceneView: sceneView)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
