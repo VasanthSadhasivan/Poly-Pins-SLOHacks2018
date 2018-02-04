@@ -71,6 +71,7 @@ class Helper{
                 let longitude : Float = (((child as! DataSnapshot).children.allObjects[2] as! DataSnapshot).value) as! Float
                 places?.append(Place(name: name, latitude: Double(latitude), longitude: Double(longitude), anchor: nil, imageURL: imageURL))
             }
+            calcARAnchors()
             
         }) { (error) in
             print(error.localizedDescription)
@@ -96,37 +97,17 @@ class Helper{
         sceneView.session.run(configuration)
     }
 
-
-    static func calcualateLatLongDist(lat_01: Float, lon_01: Float, lat_02: Float, lon_02: Float) -> Float
-    {
-        let eRadius : Float = 6371008                          // mean volumetric radius (m) nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
-        let dLat : Float    = deg2rad(deg: lat_02-lat_01)           // Calc radians between two latidual points using the function   deg2rad [ below ]
-        let dLon : Float    = deg2rad(deg: lon_02-lon_01)           // Same but with long
-        let a : Float       = sin(dLat/2) * sin(dLat/2) + cos(deg2rad(deg: lat_01)) * cos(deg2rad(deg: lat_02)) * sin(dLon/2) * sin(dLon/2)
-        
-        let c = 2 * atan2(sqrt(a), sqrt(1-a))
-        let d = eRadius * c // Distance in km
-        return d
-    }
-    
-    static func deg2rad(deg: Float) -> Float
-    {
-        return deg * (Float.pi/180)
-    }
-
-
     static func calcARAnchors(){
         DispatchQueue.global(qos: .background).async {
             while (places?.count)! < 2{
             }
-        
             for place : Place in places!{
-                let azimuth = calculateAzimuth(startLocationLatitude: Float((myLocation?.coordinate.latitude)!), startLocationLongitude: Float((myLocation?.coordinate.latitude)!), endLocationLatitude: Float(place.getLatitude()), endLocationLongitude:  Float(place.getLongitude()))
+                let azimuth = calculateAzimuth(startLocationLatitude: Float((myLocation?.coordinate.latitude)!), startLocationLongitude: Float((myLocation?.coordinate.longitude)!), endLocationLatitude: Float(place.getLatitude()), endLocationLongitude:  Float(place.getLongitude()))
             
-                let distance = calcualateLatLongDist(lat_01: Float((myLocation?.coordinate.latitude)!), lon_01:         Float((myLocation?.coordinate.latitude)!), lat_02: Float(place.getLatitude()), lon_02: Float(place.getLongitude()))
-            
-                place.setAnchor(anchor: ARAnchor(transform: createTransformationMatrix(distance: distance, azimuth: azimuth, floor: 1)))
-                print(place.getAnchor())
+
+                let distance = CLLocation(latitude: CLLocationDegrees(Float((myLocation?.coordinate.latitude)!)), longitude: CLLocationDegrees(Float((myLocation?.coordinate.longitude)!))).distance(from: CLLocation(latitude: CLLocationDegrees(place.getLatitude()), longitude: CLLocationDegrees(place.getLongitude())))
+                    
+                place.setAnchor(anchor: ARAnchor(transform: createTransformationMatrix(distance: Float(distance), azimuth: azimuth, floor: 1)))
             }
         }
     }
