@@ -17,12 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <arskView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EO5-fy-WZq">
+                            <arskView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EO5-fy-WZq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </arskView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KDU-nj-fBm">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KDU-nj-fBm">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <rect key="contentStretch" x="0.0" y="0.050000000000000003" width="1" height="1"/>
                                 <items>
                                     <barButtonItem title="        " id="o4l-5h-KHz"/>
@@ -58,16 +57,27 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Zkg-jj-J01">
+                                <rect key="frame" x="177" y="224" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Zkg-jj-J01" firstAttribute="top" secondItem="nHr-Oa-lpI" secondAttribute="top" constant="224" id="2qz-J5-a1m"/>
+                            <constraint firstItem="Zkg-jj-J01" firstAttribute="centerX" secondItem="KDU-nj-fBm" secondAttribute="centerX" id="9bN-aF-SlY"/>
+                            <constraint firstItem="EO5-fy-WZq" firstAttribute="bottom" secondItem="KDU-nj-fBm" secondAttribute="bottom" id="Mbf-Lk-VUh"/>
                             <constraint firstItem="EO5-fy-WZq" firstAttribute="width" secondItem="nHr-Oa-lpI" secondAttribute="width" id="Uj0-pG-55G"/>
-                            <constraint firstItem="EO5-fy-WZq" firstAttribute="height" secondItem="nHr-Oa-lpI" secondAttribute="height" id="jz9-ck-BwI"/>
+                            <constraint firstItem="EO5-fy-WZq" firstAttribute="leading" secondItem="KDU-nj-fBm" secondAttribute="leading" id="amc-qk-JQI"/>
+                            <constraint firstItem="EO5-fy-WZq" firstAttribute="bottom" secondItem="Vwr-3f-EZN" secondAttribute="bottom" id="eNH-Os-xA4"/>
+                            <constraint firstItem="EO5-fy-WZq" firstAttribute="height" secondItem="nHr-Oa-lpI" secondAttribute="height" id="jz9-ck-BwI" userLabel="Scene View.height = height-20"/>
+                            <constraint firstItem="EO5-fy-WZq" firstAttribute="trailing" secondItem="KDU-nj-fBm" secondAttribute="trailing" id="lIr-bg-nhR"/>
+                            <constraint firstItem="EO5-fy-WZq" firstAttribute="leading" secondItem="nHr-Oa-lpI" secondAttribute="leading" id="yQI-xq-d7b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vwr-3f-EZN"/>
                     </view>
                     <connections>
                         <outlet property="sceneView" destination="EO5-fy-WZq" id="YuC-8q-ovz"/>
+                        <outlet property="spinner" destination="Zkg-jj-J01" id="kon-Y6-Pxr"/>
                         <outlet property="toolBar" destination="KDU-nj-fBm" id="E5e-P7-MqN"/>
                     </connections>
                 </viewController>
