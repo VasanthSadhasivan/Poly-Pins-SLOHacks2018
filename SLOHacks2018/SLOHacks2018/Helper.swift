@@ -18,7 +18,8 @@ class Helper{
     
     static let locationManager : CLLocationManager = CLLocationManager()
     static var myLocation : CLLocation? = nil
-    static var places : [Place]? = nil
+    static var places : [Place]? = [Place]()
+    static var databaseReference : DatabaseReference!
     
     static func createTransformationMatrix(distance : Float, azimuth : Float, floor : Int) -> matrix_float4x4
     {
@@ -58,38 +59,47 @@ class Helper{
         }
     }
     
-    static func getPlaces() {
+    static func getAPlace(name : String) -> Place {
         let dataname = Database.database().reference()
-        var places : [Place] = [Place]()
-        dataname.observe(.value) {
+        var place: Place = Place(name: name, latitude: 0, longitude: 0, anchor: nil, imageURL: "")
+        
+        //print(observeDay)
+        dataname.child(name).child("imageURL").observe(.value) {
             (data: DataSnapshot) in
-            var tempplace = data.value as? String
-            if tempplace != nil{
-                let dataname = Database.database().reference()
-                var place: Place = Place(name: tempplace!, latitude: 0, longitude: 0, anchor: nil, imageURL: "")
-                
-                //print(observeDay)
-                dataname.child(tempplace!).child("imageURL").observe(.value) {
-                    (data: DataSnapshot) in
-                    //print (data)
-                    place.imageURL = (data.value as? String)!
-                }
-                dataname.child(tempplace!).child("latitude").observe(.value) {
-                    (data: DataSnapshot) in
-                    //print (data)
-                    place.latitude = (data.value as? Double)!
-                }
-                dataname.child(tempplace!).child("longitude").observe(.value) {
-                    (data: DataSnapshot) in
-                    //print (data)
-                    place.longitude = (data.value as? Double)!
-                }
-                places.append(place)
-            }
+            //print (data)
+            place.imageURL = (data.value as? String)!
         }
+        dataname.child(name).child("latitude").observe(.value) {
+            (data: DataSnapshot) in
+            //print (data)
+            place.latitude = (data.value as? Double)!
+        }
+        dataname.child(name).child("longitude").observe(.value) {
+            (data: DataSnapshot) in
+            //print (data)
+            place.longitude = (data.value as? Double)!
+        }
+        
+        return place
     }
     
-
+    static func getPlaces() {
+        databaseReference = Database.database().reference()
+        
+        databaseReference.observeSingleEvent(of: .value, with: { (data) in
+            print(data)
+            var tempplace = data.value as? String
+            if tempplace != nil{
+                print(getAPlace(name: tempplace!))
+                places?.append(getAPlace(name: tempplace!))
+            }
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+        
+    }
     
     static func sceneViewSetup(delegate : ARSKViewDelegate, sceneView : ARSKView){
         sceneView.delegate = delegate
@@ -130,8 +140,17 @@ class Helper{
 
 
     static func calcARAnchors(){
+        while (places?.count)! < 1{
+            continue
+        }
+        
         for place : Place in places!{
-            place.
+            let azimuth = calculateAzimuth(startLocationLatitude: Float((myLocation?.coordinate.latitude)!), startLocationLongitude: Float((myLocation?.coordinate.latitude)!), endLocationLatitude: Float(place.getLatitude()), endLocationLongitude: Float(place.getLongitude()))
+            
+            let distance = calcualateLatLongDist(lat_01: Float((myLocation?.coordinate.latitude)!), lon_01: Float((myLocation?.coordinate.latitude)!), lat_02: Float(place.getLatitude()), lon_02: Float(place.getLongitude()))
+            
+            place.setAnchor(anchor: ARAnchor(transform: createTransformationMatrix(distance: distance, azimuth: azimuth, floor: 1)))
+            print(place.getAnchor())
         }
     }
 
