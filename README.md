@@ -2,18 +2,17 @@
 
 -------------- READ ME --------------
 
------------------------------------------
+Welcome to Poly Pins!
 
+Poly Pins is an iOS application that helps users to find places around the Cal Poly Campus!
 
+Poly Pins uses augmented reality to show the users various pins.
 
+Each pin represents places that can be found on campus.
 
+The user can filter the pins by type shown to the user by selecting the icons at the bottom of the screen.
 
-
-
-
-
-
-
+The types of places to filter are: Food, Housing, Bathrooms, Recreation, Hydration, Buildings.
 
 -----------------------------------------
 Sources for the images used:
