@@ -60,7 +60,7 @@ class Helper{
         }
     }
     
-    static func getPlaces() {
+    static func getPlaces(sceneView : ARSKView) {
         databaseReference = Database.database().reference()
         
         databaseReference.observeSingleEvent(of: .value, with: { (data) in
@@ -70,9 +70,10 @@ class Helper{
                 let imageURL : String = (((child as! DataSnapshot).children.allObjects[0] as! DataSnapshot).value) as! String
                 let latitude : Float = (((child as! DataSnapshot).children.allObjects[1] as! DataSnapshot).value) as! Float
                 let longitude : Float = (((child as! DataSnapshot).children.allObjects[2] as! DataSnapshot).value) as! Float
+                
                 places?.append(Place(name: name, latitude: Double(latitude), longitude: Double(longitude), anchor: nil, imageURL: imageURL))
             }
-            calcARAnchors()
+            calcARAnchors(sceneView: sceneView)
             
         }) { (error) in
             print(error.localizedDescription)
@@ -98,7 +99,7 @@ class Helper{
         sceneView.session.run(configuration)
     }
 
-    static func calcARAnchors(){
+    static func calcARAnchors(sceneView : ARSKView){
         DispatchQueue.global(qos: .background).async {
             while (places?.count)! < 2{
             }
@@ -107,9 +108,15 @@ class Helper{
             
 
                 let distance = CLLocation(latitude: CLLocationDegrees(Float((myLocation?.coordinate.latitude)!)), longitude: CLLocationDegrees(Float((myLocation?.coordinate.longitude)!))).distance(from: CLLocation(latitude: CLLocationDegrees(place.getLatitude()), longitude: CLLocationDegrees(place.getLongitude())))
-                    
-                place.setAnchor(anchor: ARAnchor(transform: createTransformationMatrix(distance: Float(distance), azimuth: azimuth, floor: 1)))
+                if (sceneView.session.currentFrame?.camera.transform) != nil{
+                    place.setAnchor(anchor: ARAnchor(transform: simd_mul( createTransformationMatrix(distance: Float(10), azimuth: azimuth, floor: 0), (sceneView.session.currentFrame?.camera.transform)!)))
+                }else{
+                    place.setAnchor(anchor: ARAnchor(transform: createTransformationMatrix(distance: Float(10), azimuth: azimuth, floor: 0)))
+                }
+                
             }
+            initAnchorDicked()
+            placeAnchorObjects(sceneView: sceneView)
         }
     }
 
@@ -118,6 +125,7 @@ class Helper{
         for place : Place in places!
         {
             let anchorID = place.getAnchor()?.identifier
+            print("Name: ", place.getName(), anchorID!)
             anchorDicked.updateValue(place, forKey: anchorID!)
         }
     }
@@ -127,6 +135,14 @@ class Helper{
         for place in places!
         {
             sceneView.session.add(anchor : place.getAnchor()!)
+        }
+    }
+    
+    static func deleteOldAnchors(sceneView : ARSKView){
+        for place : Place in places!{
+            if place.getAnchor() != nil{
+                sceneView.session.remove(anchor: place.getAnchor()!)
+            }
         }
     }
 }
