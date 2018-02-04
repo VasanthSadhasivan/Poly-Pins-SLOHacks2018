@@ -1,0 +1,218 @@
+{
+  "805 Kitchen" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.299714,
+    "longitude" : -120.659611,
+    "type" : "food"
+  },
+  "Alex G Spanos Stadium" : {
+    "imageURL" : "spanosStadium.png",
+    "latitude" : 35.298476,
+    "longitude" : -120.664876,
+    "type" : "recreation"
+  },
+  "Baker" : {
+    "imageURL" : "baker.png",
+    "latitude" : 35.301034,
+    "longitude" : -120.661196,
+    "type" : "building"
+  },
+  "Bishop's Burgers" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.299524,
+    "longitude" : -120.659391,
+    "type" : "food"
+  },
+  "Cal Poly Lower Sports Complex Fields" : {
+    "imageURL" : "lowerSportsComplex.png",
+    "latitude" : 35.303872,
+    "longitude" : -120.665482,
+    "type" : "recreation"
+  },
+  "Cal Poly Soccer Fields" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.308587,
+    "longitude" : -120.667997,
+    "type" : "recreation"
+  },
+  "Cal Poly University Store" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.29888,
+    "longitude" : -120.659972,
+    "type" : "building"
+  },
+  "Cerro Vista Apartments" : {
+    "imageURL" : "cerroVista.png",
+    "latitude" : 35.304791,
+    "longitude" : -120.657151,
+    "type" : "housing"
+  },
+  "Diablo Hall" : {
+    "imageURL" : "northMountain.png",
+    "latitude" : 35.303131,
+    "longitude" : -120.658223,
+    "type" : "housing"
+  },
+  "Einstein Bros Bagels" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.307366,
+    "longitude" : -120.659195,
+    "type" : "food"
+  },
+  "Engineering III" : {
+    "imageURL" : "engineering3.png",
+    "latitude" : 35.302628,
+    "longitude" : -120.665622,
+    "type" : "building"
+  },
+  "Engineering IV" : {
+    "imageURL" : "engineering4.png",
+    "latitude" : 35.302873,
+    "longitude" : -120.664644,
+    "type" : "building"
+  },
+  "EngineeringIV" : {
+    "imageURL" : "engineering4.png",
+    "latitude" : 35.302873,
+    "longitude" : -120.664644,
+    "type" : "building"
+  },
+  "Fremont Hall" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.300275,
+    "longitude" : -120.655983,
+    "type" : "housing"
+  },
+  "Jamba Juice" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.307247,
+    "longitude" : -120.65938,
+    "type" : "food"
+  },
+  "Kennedy Library" : {
+    "imageURL" : "kennedyLib.png",
+    "latitude" : 35.302159,
+    "longitude" : -120.663498,
+    "type" : "building"
+  },
+  "Lassen Hall" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.302472,
+    "longitude" : -120.658417,
+    "type" : "housing"
+  },
+  "Lucy's Juice" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.299969,
+    "longitude" : -120.659875,
+    "type" : "food"
+  },
+  "Mott Gym" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.298903,
+    "longitude" : -120.658596,
+    "type" : "recreation"
+  },
+  "Muir Hall" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.300891,
+    "longitude" : -120.656875,
+    "type" : "housing"
+  },
+  "Mustang Lanes" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.300133,
+    "longitude" : -120.658601,
+    "type" : "recreation"
+  },
+  "Palomar Hall" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.303036,
+    "longitude" : -120.657646,
+    "type" : "housing"
+  },
+  "Poly Canyon Village" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.307856,
+    "longitude" : -120.65884,
+    "type" : "housing"
+  },
+  "Poly Deli" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.29997,
+    "longitude" : -120.659744,
+    "type" : "food"
+  },
+  "Recreation Center" : {
+    "imageURL" : "recCenter.png",
+    "latitude" : 35.29855,
+    "longitude" : -120.659913,
+    "type" : "recreation"
+  },
+  "Santa Lucia Hall" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.301527,
+    "longitude" : -120.65789,
+    "type" : "housing"
+  },
+  "Sequoia Hall" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.300651,
+    "longitude" : -120.657558,
+    "type" : "housing"
+  },
+  "Shake Smart" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.29888,
+    "longitude" : -120.659972,
+    "type" : "food"
+  },
+  "Shasta Hall" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.302921,
+    "longitude" : -120.658695,
+    "type" : "housing"
+  },
+  "Sierra Madre Hall" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.299211,
+    "longitude" : -120.655271,
+    "type" : "housing"
+  },
+  "Tenaya Hall" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.299981,
+    "longitude" : -120.656623,
+    "type" : "housing"
+  },
+  "The Avenue" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.29959,
+    "longitude" : -120.659219,
+    "type" : "food"
+  },
+  "Trinity Hall" : {
+    "imageURL" : "trinityHall.png",
+    "latitude" : 35.301811,
+    "longitude" : -120.657306,
+    "type" : "housing"
+  },
+  "Tu Taco" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.299621,
+    "longitude" : -120.659358,
+    "type" : "food"
+  },
+  "Whitney Hall" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.302559,
+    "longitude" : -120.657994,
+    "type" : "housing"
+  },
+  "Yosemite Hall" : {
+    "imageURL" : "house.png",
+    "latitude" : 35.297742,
+    "longitude" : -120.65376,
+    "type" : "housing"
+  }
+}
