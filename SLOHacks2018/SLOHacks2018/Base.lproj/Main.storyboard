@@ -24,10 +24,36 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KDU-nj-fBm">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.050000000000000003" width="1" height="1"/>
                                 <items>
-                                    <barButtonItem title="Food" id="rMI-c3-STv">
+                                    <barButtonItem title="🍕" id="rMI-c3-STv">
                                         <connections>
                                             <action selector="Food:" destination="BV1-FR-VrT" id="0fr-I1-ghF"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="🏠" id="igy-oN-4qC">
+                                        <connections>
+                                            <action selector="Housing:" destination="BV1-FR-VrT" id="fm4-X4-4Aq"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="🚻" id="kWE-7y-bVK">
+                                        <connections>
+                                            <action selector="Restrooms:" destination="BV1-FR-VrT" id="kBb-M7-meE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="🏋️" id="5Lz-DP-rpW">
+                                        <connections>
+                                            <action selector="Recreation:" destination="BV1-FR-VrT" id="CbN-Fe-rnp"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="💧" id="tCp-iv-PBm">
+                                        <connections>
+                                            <action selector="Hydration:" destination="BV1-FR-VrT" id="pmr-WU-cAg"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="🏛️" id="Z0E-us-yuH">
+                                        <connections>
+                                            <action selector="Buildings:" destination="BV1-FR-VrT" id="vtk-Vo-UBX"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -38,10 +64,12 @@
                     </view>
                     <connections>
                         <outlet property="sceneView" destination="EO5-fy-WZq" id="YuC-8q-ovz"/>
+                        <outlet property="toolBar" destination="KDU-nj-fBm" id="E5e-P7-MqN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.30560788131847588" green="0.71930520304568524" blue="0.28685010827052837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

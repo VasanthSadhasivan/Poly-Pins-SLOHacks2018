@@ -68,9 +68,10 @@ class Helper{
         configuration.worldAlignment = .gravityAndHeading
         sceneView.session.run(configuration, options: .resetTracking)
         
-        places?.removeAll()
         deleteOldAnchors(sceneView: sceneView)
+        places?.removeAll()
         anchorDicked.removeAll()
+        donePullingFBData = false
         
         databaseReference = Database.database().reference()
         
@@ -143,6 +144,7 @@ class Helper{
 
     static func initAnchorDicked()
     {
+        print(places)
         for place : Place in places!
         {
             let anchorID = place.getAnchor()?.identifier
@@ -192,6 +194,7 @@ class Helper{
         
         return newImage!
     }
+    
 }
 
 
