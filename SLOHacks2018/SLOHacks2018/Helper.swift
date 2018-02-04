@@ -130,7 +130,9 @@ class Helper{
 
 
     static func calcARAnchors(){
-        
+        for place : Place in places!{
+            place.
+        }
     }
 
 }
