@@ -15,13 +15,15 @@ class Place{
     var longitude : Double
     var anchor : ARAnchor?
     var imageURL : String
+    var type : String
     
-    init(name: String, latitude : Double, longitude : Double, anchor : ARAnchor?, imageURL : String) {
+    init(name: String, latitude : Double, longitude : Double, anchor : ARAnchor?, imageURL : String, type: String) {
         self.name = name
         self.latitude = latitude
         self.longitude = longitude
         self.anchor = anchor
         self.imageURL = imageURL
+        self.type = type
     }
     
     func getName() -> String {
@@ -44,6 +46,10 @@ class Place{
         return self.imageURL
     }
     
+    func getType() -> String {
+        return self.type
+    }
+    
     func setName(name : String) {
         self.name = name
     }
@@ -62,5 +68,9 @@ class Place{
     
     func setImageURL(imageURL: String){
         self.imageURL = imageURL
+    }
+    
+    func setType(type: String){
+        self.type = type
     }
 }

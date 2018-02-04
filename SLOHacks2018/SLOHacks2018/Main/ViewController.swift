@@ -14,10 +14,50 @@ import CoreLocation
 
 class ViewController: UIViewController, ARSKViewDelegate, CLLocationManagerDelegate {
     
+    @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet var sceneView: ARSKView!
+    
+    @IBAction func Housing(_ sender: Any) {
+        Helper.filterType = "housing"
+        Helper.getPlaces(sceneView: sceneView)
+    }
+    @IBAction func Food(_ sender: Any) {
+        Helper.filterType = "food"
+        Helper.getPlaces(sceneView: sceneView)
+    }
+    @IBAction func Restrooms(_ sender: Any) {
+        Helper.filterType = "restrooms"
+        Helper.getPlaces(sceneView: sceneView)
+    }
+    @IBAction func Recreation(_ sender: Any) {
+        Helper.filterType = "recreation"
+        Helper.getPlaces(sceneView: sceneView)
+    }
+    @IBAction func Hydration(_ sender: Any) {
+        Helper.filterType = "hydration"
+        Helper.getPlaces(sceneView: sceneView)
+    }
+    @IBAction func Buildings(_ sender: Any) {
+        Helper.filterType = "buildings"
+        Helper.getPlaces(sceneView: sceneView)
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        //self.navigationController?.isToolbarHidden = false
+//        var items = [UIBarButtonItem]()
+//        items.append(
+//            UIBarButtonItem(title: "Food", style: .plain, target: self, action: #selector(Food(_:))
+//        ))
+//        items.append(
+//            UIBarButtonItem(title: "housing", style: .plain, target: self, action: #selector(Housing(_:))
+//        ))
+//
+//        //self.navigationController?.toolbar.items = items
+//        toolBar.setItems(items, animated: false)
+//        //toolBar.backgroundColor = UIColor.green
     }
     
     override func viewWillAppear(_ animated: Bool) {
