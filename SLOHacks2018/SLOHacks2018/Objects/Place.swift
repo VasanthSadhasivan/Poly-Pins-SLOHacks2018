@@ -43,4 +43,24 @@ class Place{
     func getImageURL() -> String {
         return self.imageURL
     }
+    
+    func setName(name : String) {
+        self.name = name
+    }
+    
+    func setLatitude(latitude : Double) {
+        self.latitude = latitude
+    }
+    
+    func setLongitude(longitude : Double) {
+        self.longitude = longitude
+    }
+    
+    func setAnchor(anchor : ARAnchor) {
+        self.anchor = anchor
+    }
+    
+    func setImageURL(imageURL: String){
+        self.imageURL = imageURL
+    }
 }
