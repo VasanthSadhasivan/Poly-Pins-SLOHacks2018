@@ -18,7 +18,6 @@ class ViewController: UIViewController, ARSKViewDelegate, CLLocationManagerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,7 +25,6 @@ class ViewController: UIViewController, ARSKViewDelegate, CLLocationManagerDeleg
         Helper.startLocationService(delegate: self as CLLocationManagerDelegate)
         Helper.sceneViewSetup(delegate: self as ARSKViewDelegate, sceneView: sceneView)
         Helper.calcARAnchors()
-        Helper.getPlaces()
     }
     
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
