@@ -13,7 +13,6 @@ import Firebase
 import FirebaseDatabase
 import FirebaseCore
 import CoreLocation
-import Math
 
 class Helper{
     
@@ -58,43 +57,39 @@ class Helper{
             locationManager.startUpdatingLocation()
         }
     }
-
-    static func getAPlace(name : String) -> Place {
-        let dataname = Database.database().reference()
-        let place: Place
-        
-        //print(observeDay)
-        dataname.child(name).child("imageURL").observe(.value) {
-            (data: DataSnapshot) in
-            //print (data)
-            place.imageURL = data.value as? String
-        }
-        dataname.child(name).child("latitude").observe(.value) {
-            (data: DataSnapshot) in
-            //print (data)
-            place.latitude = data.value as? Float
-        }
-        dataname.child(name).child("longitude").observe(.value) {
-            (data: DataSnapshot) in
-            //print (data)
-            place.longitude = data.value as? Float
-        }
-        
-        return place
-    }
     
     static func getPlaces() {
         let dataname = Database.database().reference()
         var places : [Place] = [Place]()
-        print (data)
         dataname.observe(.value) {
             (data: DataSnapshot) in
-            print(data)
-            tempplace = data.value as? String
-            places.append(getAPlace(tempplace))
+            var tempplace = data.value as? String
+            if tempplace != nil{
+                let dataname = Database.database().reference()
+                var place: Place = Place(name: tempplace!, latitude: 0, longitude: 0, anchor: nil, imageURL: "")
+                
+                //print(observeDay)
+                dataname.child(tempplace!).child("imageURL").observe(.value) {
+                    (data: DataSnapshot) in
+                    //print (data)
+                    place.imageURL = (data.value as? String)!
+                }
+                dataname.child(tempplace!).child("latitude").observe(.value) {
+                    (data: DataSnapshot) in
+                    //print (data)
+                    place.latitude = (data.value as? Double)!
+                }
+                dataname.child(tempplace!).child("longitude").observe(.value) {
+                    (data: DataSnapshot) in
+                    //print (data)
+                    place.longitude = (data.value as? Double)!
+                }
+                places.append(place)
+            }
         }
-        
     }
+    
+
     
     static func sceneViewSetup(delegate : ARSKViewDelegate, sceneView : ARSKView){
         sceneView.delegate = delegate
@@ -115,26 +110,29 @@ class Helper{
         sceneView.session.run(configuration)
     }
 
-    static func calcualateLatLongDist(lat_01: Float, lon_01: Float, lat_02: Float, lon_02: Float)
+
+    static func calcualateLatLongDist(lat_01: Float, lon_01: Float, lat_02: Float, lon_02: Float) -> Float
     {
-        var eRadius : Float = 6371008                          // mean volumetric radius (m) nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
-        var dLat : Float    = deg2rad(lat_02-lat_01)           // Calc radians between two latidual points using the function   deg2rad [ below ]
-        var dLon : Float    = deg2rad(lon_02-lon_01)           // Same but with long
-        var a : Float       = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(deg2rad(lat_01)) * Math.cos(deg2rad(lat_02)) * Math.sin(dLon/2) * Math.sin(dLon/2)
+        let eRadius : Float = 6371008                          // mean volumetric radius (m) nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
+        let dLat : Float    = deg2rad(deg: lat_02-lat_01)           // Calc radians between two latidual points using the function   deg2rad [ below ]
+        let dLon : Float    = deg2rad(deg: lon_02-lon_01)           // Same but with long
+        let a : Float       = sin(dLat/2) * sin(dLat/2) + cos(deg2rad(deg: lat_01)) * cos(deg2rad(deg: lat_02)) * sin(dLon/2) * sin(dLon/2)
         
-        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a))
-        var d = R * c // Distance in km
+        let c = 2 * atan2(sqrt(a), sqrt(1-a))
+        let d = eRadius * c // Distance in km
         return d
     }
     
-    static func deg2rad(deg: Float)
+    static func deg2rad(deg: Float) -> Float
     {
-        return deg * (Math.PI/180)
+        return deg * (Float.pi/180)
     }
 
 
     static func calcARAnchors(){
-        
+        for place : Place in places!{
+            place.
+        }
     }
 
 }

@@ -10,8 +10,9 @@ import UIKit
 import SpriteKit
 import ARKit
 import Firebase
+import CoreLocation
 
-class ViewController: UIViewController, ARSKViewDelegate {
+class ViewController: UIViewController, ARSKViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet var sceneView: ARSKView!
     
@@ -22,8 +23,9 @@ class ViewController: UIViewController, ARSKViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        Helper.sceneViewSetup(delegate: self, sceneView: sceneView)
-        
+        Helper.startLocationService(delegate: self as CLLocationManagerDelegate)
+        Helper.sceneViewSetup(delegate: self as ARSKViewDelegate, sceneView: sceneView)
+        Helper.getPlaces()
     }
     
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
@@ -31,6 +33,11 @@ class ViewController: UIViewController, ARSKViewDelegate {
         let labelNode = SKLabelNode(text: "👾")
         labelNode.horizontalAlignmentMode = .center
         labelNode.verticalAlignmentMode = .center
+
         return labelNode;
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        Helper.myLocation = locations[0]
     }
 }
