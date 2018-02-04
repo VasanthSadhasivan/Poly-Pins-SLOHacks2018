@@ -2,7 +2,7 @@
 //  Helper.swift
 //  SLOHacks2018
 //
-//  Created by Vasanth Sadhasivan on 2/3/18.
+//  Created by Vasanth, Hunter, Finn, Angello on 2/3/18.
 //  Copyright © 2018 Vasanth Sadhasivan. All rights reserved.
 //
 
