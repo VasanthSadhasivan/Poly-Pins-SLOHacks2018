@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  SLOHacks2018
 //
-//  Created by Vasanth Sadhasivan on 2/3/18.
+//  Created by Vasanth, Hunter, Finn, Angello on 2/3/18.
 //  Copyright © 2018 Vasanth Sadhasivan. All rights reserved.
 //
 
@@ -19,6 +19,11 @@ class ViewController: UIViewController, ARSKViewDelegate, CLLocationManagerDeleg
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet var sceneView: ARSKView!
     
+    @IBAction func All(_ sender: Any) {
+        Helper.filterType = nil
+        Helper.getPlaces(sceneView: sceneView)
+        
+    }
     @IBAction func Housing(_ sender: Any) {
         Helper.filterType = "housing"
         Helper.getPlaces(sceneView: sceneView)
@@ -49,6 +54,7 @@ class ViewController: UIViewController, ARSKViewDelegate, CLLocationManagerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -111,7 +117,9 @@ class ViewController: UIViewController, ARSKViewDelegate, CLLocationManagerDeleg
             image = Helper.resizeImage(image: temp!, targetSize: CGSize(width: temp!.size.width*5.4, height: temp!.size.height*5.4))
 
         }
+        
         let spriteNode = CustomNode(texture: SKTexture(image: image), distance: Float(distance!))
+        
         return spriteNode
     }
     

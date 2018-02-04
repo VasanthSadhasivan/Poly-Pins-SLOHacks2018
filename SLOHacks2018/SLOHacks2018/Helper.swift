@@ -2,7 +2,7 @@
 //  Helper.swift
 //  SLOHacks2018
 //
-//  Created by Vasanth Sadhasivan on 2/3/18.
+//  Created by Vasanth, Hunter, Finn, Angello on 2/3/18.
 //  Copyright © 2018 Vasanth Sadhasivan. All rights reserved.
 //
 
@@ -133,8 +133,13 @@ class Helper{
             
 
                 let distance = CLLocation(latitude: CLLocationDegrees(Float((myLocation?.coordinate.latitude)!)), longitude: CLLocationDegrees(Float((myLocation?.coordinate.longitude)!))).distance(from: CLLocation(latitude: CLLocationDegrees(place.getLatitude()), longitude: CLLocationDegrees(place.getLongitude())))
+                if distance >= 20{
+                    place.setAnchor(anchor: ARAnchor(transform: createTransformationMatrix(distance: Float(20), azimuth: azimuth, floor: 0)))
+                }else{
+                    place.setAnchor(anchor: ARAnchor(transform: createTransformationMatrix(distance: Float(distance), azimuth: azimuth, floor: 0)))
+                }
                 
-                place.setAnchor(anchor: ARAnchor(transform: createTransformationMatrix(distance: Float(20), azimuth: azimuth, floor: 0)))
+
                 
             }
             initAnchorDicked()

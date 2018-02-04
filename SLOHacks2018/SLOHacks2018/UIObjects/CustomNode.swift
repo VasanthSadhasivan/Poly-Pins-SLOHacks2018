@@ -2,7 +2,7 @@
 //  MarkerNode.swift
 //  LocationTicketMasterIntegrationProject
 //
-//  Created by Vasanth Sadhasivan on 8/13/17.
+//  Created by Vasanth, Hunter, Finn, Angello  on 8/13/17.
 //  Copyright © 2017 Vasanth Sadhasivan. All rights reserved.
 //
 

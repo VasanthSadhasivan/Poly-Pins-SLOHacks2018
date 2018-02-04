@@ -24,7 +24,12 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <rect key="contentStretch" x="0.0" y="0.050000000000000003" width="1" height="1"/>
                                 <items>
-                                    <barButtonItem title="        " id="o4l-5h-KHz"/>
+                                    <barButtonItem title="    " id="o4l-5h-KHz"/>
+                                    <barButtonItem title="All" id="Meu-Cc-Do8">
+                                        <connections>
+                                            <action selector="All:" destination="BV1-FR-VrT" id="FAw-fs-ZZl"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="🍕" id="rMI-c3-STv">
                                         <connections>
                                             <action selector="Food:" destination="BV1-FR-VrT" id="0fr-I1-ghF"/>
