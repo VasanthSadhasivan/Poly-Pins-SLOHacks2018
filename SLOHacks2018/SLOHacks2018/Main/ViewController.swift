@@ -31,11 +31,9 @@ class ViewController: UIViewController, ARSKViewDelegate, CLLocationManagerDeleg
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
         // Create and configure a node for the anchor added to the view's session.
         let labelNode = SKLabelNode(text: Helper.anchorDicked[anchor.identifier]?.getImageURL())
-        let image = Helper.resizeImage(image: #imageLiteral(resourceName: "house"), targetSize: CGSize(width: #imageLiteral(resourceName: "house").size.width*7, height: #imageLiteral(resourceName: "house").size.height*7))
+        let temp = UIImage(named: (Helper.anchorDicked[anchor.identifier]?.getImageURL())!)
+        let image = Helper.resizeImage(image: temp!, targetSize: CGSize(width: temp!.size.width*7, height: temp!.size.height*7))
         let spriteNode = SKSpriteNode(texture: SKTexture(image: image))
-        labelNode.fontSize = labelNode.fontSize*25
-        labelNode.horizontalAlignmentMode = .center
-        labelNode.verticalAlignmentMode = .center
         return spriteNode
     }
     
@@ -48,7 +46,6 @@ class ViewController: UIViewController, ARSKViewDelegate, CLLocationManagerDeleg
         let currentLocation = Helper.myLocation
         
         let distance = newLocation.distance(from: currentLocation!)
-        print(distance)
         if distance > 15{
             let configuration = ARWorldTrackingConfiguration()
             configuration.worldAlignment = .gravityAndHeading
