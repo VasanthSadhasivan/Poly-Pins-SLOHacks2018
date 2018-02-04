@@ -20,6 +20,7 @@ class Helper{
     static var myLocation : CLLocation? = nil
     static var places : [Place]? = [Place]()
     static var databaseReference : DatabaseReference!
+    static var anchorDicked = [UUID : Place]()                  //
     
     static func createTransformationMatrix(distance : Float, azimuth : Float, floor : Int) -> matrix_float4x4
     {
@@ -113,6 +114,22 @@ class Helper{
         }
     }
 
+    static func initAnchorDicked()
+    {
+        for place : Place in places!
+        {
+            let anchorID = place.getAnchor()?.identifier
+            anchorDicked.updateValue(place, forKey: anchorID!)
+        }
+    }
+    
+    static func placeAnchorObjects(sceneView : ARSKView)
+    {
+        for place in places!
+        {
+            sceneView.session.add(anchor : place.getAnchor()!)
+        }
+    }
 }
 
 
