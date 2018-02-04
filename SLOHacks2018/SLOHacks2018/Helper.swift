@@ -103,16 +103,14 @@ class Helper{
         DispatchQueue.global(qos: .background).async {
             while (places?.count)! < 2{
             }
+            
             for place : Place in places!{
                 let azimuth = calculateAzimuth(startLocationLatitude: Float((myLocation?.coordinate.latitude)!), startLocationLongitude: Float((myLocation?.coordinate.longitude)!), endLocationLatitude: Float(place.getLatitude()), endLocationLongitude:  Float(place.getLongitude()))
             
 
                 let distance = CLLocation(latitude: CLLocationDegrees(Float((myLocation?.coordinate.latitude)!)), longitude: CLLocationDegrees(Float((myLocation?.coordinate.longitude)!))).distance(from: CLLocation(latitude: CLLocationDegrees(place.getLatitude()), longitude: CLLocationDegrees(place.getLongitude())))
-                if (sceneView.session.currentFrame?.camera.transform) != nil{
-                    place.setAnchor(anchor: ARAnchor(transform: simd_mul( createTransformationMatrix(distance: Float(10), azimuth: azimuth, floor: 0), (sceneView.session.currentFrame?.camera.transform)!)))
-                }else{
-                    place.setAnchor(anchor: ARAnchor(transform: createTransformationMatrix(distance: Float(10), azimuth: azimuth, floor: 0)))
-                }
+                
+                place.setAnchor(anchor: ARAnchor(transform: createTransformationMatrix(distance: Float(100), azimuth: azimuth, floor: 0)))
                 
             }
             initAnchorDicked()
