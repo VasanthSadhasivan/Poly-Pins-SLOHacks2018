@@ -25,8 +25,11 @@ class ViewController: UIViewController, ARSKViewDelegate, CLLocationManagerDeleg
         super.viewWillAppear(animated)
         Helper.startLocationService(delegate: self as CLLocationManagerDelegate)
         Helper.sceneViewSetup(delegate: self as ARSKViewDelegate, sceneView: sceneView)
+        DispatchQueue.global(qos: .background).async {
+            Helper.calcARAnchors()
+        }
         Helper.getPlaces()
-        //Helper.calcARAnchors()
+
     }
     
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {

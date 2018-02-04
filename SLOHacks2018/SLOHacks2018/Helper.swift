@@ -59,46 +59,22 @@ class Helper{
         }
     }
     
-    static func getAPlace(name : String) -> Place {
-        let dataname = Database.database().reference()
-        var place: Place = Place(name: name, latitude: 0, longitude: 0, anchor: nil, imageURL: "")
-        
-        //print(observeDay)
-        dataname.child(name).child("imageURL").observe(.value) {
-            (data: DataSnapshot) in
-            //print (data)
-            place.imageURL = (data.value as? String)!
-        }
-        dataname.child(name).child("latitude").observe(.value) {
-            (data: DataSnapshot) in
-            //print (data)
-            place.latitude = (data.value as? Double)!
-        }
-        dataname.child(name).child("longitude").observe(.value) {
-            (data: DataSnapshot) in
-            //print (data)
-            place.longitude = (data.value as? Double)!
-        }
-        
-        return place
-    }
-    
     static func getPlaces() {
         databaseReference = Database.database().reference()
         
         databaseReference.observeSingleEvent(of: .value, with: { (data) in
-            print(data)
-            var tempplace = data.value as? String
-            if tempplace != nil{
-                print(getAPlace(name: tempplace!))
-                places?.append(getAPlace(name: tempplace!))
+
+            for child in data.children.allObjects{
+                let name : String = ((child as! DataSnapshot).key) as String
+                let imageURL : String = (((child as! DataSnapshot).children.allObjects[0] as! DataSnapshot).value) as! String
+                let latitude : Float = (((child as! DataSnapshot).children.allObjects[1] as! DataSnapshot).value) as! Float
+                let longitude : Float = (((child as! DataSnapshot).children.allObjects[2] as! DataSnapshot).value) as! Float
+                places?.append(Place(name: name, latitude: Double(latitude), longitude: Double(longitude), anchor: nil, imageURL: imageURL))
             }
             
         }) { (error) in
             print(error.localizedDescription)
         }
-        
-        
     }
     
     static func sceneViewSetup(delegate : ARSKViewDelegate, sceneView : ARSKView){
@@ -140,8 +116,7 @@ class Helper{
 
 
     static func calcARAnchors(){
-        while (places?.count)! < 1{
-            continue
+        while (places?.count)! < 2{
         }
         
         for place : Place in places!{
