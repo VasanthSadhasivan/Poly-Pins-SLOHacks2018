@@ -30,13 +30,13 @@ class ViewController: UIViewController, ARSKViewDelegate, CLLocationManagerDeleg
     
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
         // Create and configure a node for the anchor added to the view's session.
-        let labelNode = SKLabelNode(text: "🚻")
-        labelNode.fontSize = labelNode.fontSize*250
+        let labelNode = SKLabelNode(text: Helper.anchorDicked[anchor.identifier]?.getImageURL())
+        let image = Helper.resizeImage(image: #imageLiteral(resourceName: "house"), targetSize: CGSize(width: #imageLiteral(resourceName: "house").size.width*7, height: #imageLiteral(resourceName: "house").size.height*7))
+        let spriteNode = SKSpriteNode(texture: SKTexture(image: image))
+        labelNode.fontSize = labelNode.fontSize*25
         labelNode.horizontalAlignmentMode = .center
         labelNode.verticalAlignmentMode = .center
-        print("here")
-
-        return labelNode;
+        return spriteNode
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -49,7 +49,7 @@ class ViewController: UIViewController, ARSKViewDelegate, CLLocationManagerDeleg
         
         let distance = newLocation.distance(from: currentLocation!)
         print(distance)
-        if distance > 10{
+        if distance > 15{
             let configuration = ARWorldTrackingConfiguration()
             configuration.worldAlignment = .gravityAndHeading
             sceneView.session.run(configuration, options: .resetTracking)
@@ -58,6 +58,5 @@ class ViewController: UIViewController, ARSKViewDelegate, CLLocationManagerDeleg
             Helper.deleteOldAnchors(sceneView: sceneView)
             Helper.calcARAnchors(sceneView: sceneView)
         }
-        
     }
 }
