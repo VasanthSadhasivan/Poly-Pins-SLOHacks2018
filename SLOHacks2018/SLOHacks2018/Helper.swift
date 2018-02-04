@@ -116,16 +116,18 @@ class Helper{
 
 
     static func calcARAnchors(){
-        while (places?.count)! < 2{
-        }
+        DispatchQueue.global(qos: .background).async {
+            while (places?.count)! < 2{
+            }
         
-        for place : Place in places!{
-            let azimuth = calculateAzimuth(startLocationLatitude: Float((myLocation?.coordinate.latitude)!), startLocationLongitude: Float((myLocation?.coordinate.latitude)!), endLocationLatitude: Float(place.getLatitude()), endLocationLongitude: Float(place.getLongitude()))
+            for place : Place in places!{
+                let azimuth = calculateAzimuth(startLocationLatitude: Float((myLocation?.coordinate.latitude)!), startLocationLongitude: Float((myLocation?.coordinate.latitude)!), endLocationLatitude: Float(place.getLatitude()), endLocationLongitude:  Float(place.getLongitude()))
             
-            let distance = calcualateLatLongDist(lat_01: Float((myLocation?.coordinate.latitude)!), lon_01: Float((myLocation?.coordinate.latitude)!), lat_02: Float(place.getLatitude()), lon_02: Float(place.getLongitude()))
+                let distance = calcualateLatLongDist(lat_01: Float((myLocation?.coordinate.latitude)!), lon_01:         Float((myLocation?.coordinate.latitude)!), lat_02: Float(place.getLatitude()), lon_02: Float(place.getLongitude()))
             
-            place.setAnchor(anchor: ARAnchor(transform: createTransformationMatrix(distance: distance, azimuth: azimuth, floor: 1)))
-            print(place.getAnchor())
+                place.setAnchor(anchor: ARAnchor(transform: createTransformationMatrix(distance: distance, azimuth: azimuth, floor: 1)))
+                print(place.getAnchor())
+            }
         }
     }
 
