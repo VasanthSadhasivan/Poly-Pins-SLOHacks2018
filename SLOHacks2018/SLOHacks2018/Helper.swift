@@ -19,6 +19,7 @@ class Helper{
     static let locationManager : CLLocationManager = CLLocationManager()
     static var myLocation : CLLocation? = nil
     static var places : [Place]? = [Place]()
+    static var databaseReference : DatabaseReference!
     
     static func createTransformationMatrix(distance : Float, azimuth : Float, floor : Int) -> matrix_float4x4
     {
@@ -83,16 +84,20 @@ class Helper{
     }
     
     static func getPlaces() {
-        let dataname = Database.database().reference()
-        var places : [Place] = [Place]()
-        dataname.observe(.value) {
-            (data: DataSnapshot) in
+        databaseReference = Database.database().reference()
+        
+        databaseReference.observeSingleEvent(of: .value, with: { (data) in
             print(data)
             var tempplace = data.value as? String
             if tempplace != nil{
-                places.append(getAPlace(name: tempplace!))
+                print(getAPlace(name: tempplace!))
+                places?.append(getAPlace(name: tempplace!))
             }
+            
+        }) { (error) in
+            print(error.localizedDescription)
         }
+        
         
     }
     
