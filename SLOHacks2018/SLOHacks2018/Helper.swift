@@ -20,7 +20,8 @@ class Helper{
     static var myLocation : CLLocation? = nil
     static var places : [Place]? = [Place]()
     static var databaseReference : DatabaseReference!
-    static var anchorDicked = [UUID : Place]()                  //
+    static var anchorDicked = [UUID : Place]()
+    static var donePullingFBData = false
     
     static func createTransformationMatrix(distance : Float, azimuth : Float, floor : Int) -> matrix_float4x4
     {
@@ -73,6 +74,7 @@ class Helper{
                 
                 places?.append(Place(name: name, latitude: Double(latitude), longitude: Double(longitude), anchor: nil, imageURL: imageURL))
             }
+            donePullingFBData = true
             calcARAnchors(sceneView: sceneView)
             
         }) { (error) in
@@ -101,7 +103,7 @@ class Helper{
 
     static func calcARAnchors(sceneView : ARSKView){
         DispatchQueue.global(qos: .background).async {
-            while (places?.count)! < 2{
+            while !donePullingFBData{
             }
             
             for place : Place in places!{

@@ -32,6 +32,7 @@ class ViewController: UIViewController, ARSKViewDelegate, CLLocationManagerDeleg
         // Create and configure a node for the anchor added to the view's session.
         let labelNode = SKLabelNode(text: Helper.anchorDicked[anchor.identifier]?.getImageURL())
         let temp = UIImage(named: (Helper.anchorDicked[anchor.identifier]?.getImageURL())!)
+        print(Helper.anchorDicked[anchor.identifier]?.getImageURL())
         let image = Helper.resizeImage(image: temp!, targetSize: CGSize(width: temp!.size.width*7, height: temp!.size.height*7))
         let spriteNode = SKSpriteNode(texture: SKTexture(image: image))
         return spriteNode
