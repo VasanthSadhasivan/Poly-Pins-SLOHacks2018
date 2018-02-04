@@ -1,12 +1,14 @@
 # SLOHacks2018
 
+Created by: Vasanth Sadhasivan, Hunter Morse, Angello Parrolivelli, and Finn Childress
+
 -------------- READ ME --------------
 
 Welcome to Poly Pins!
 
 Poly Pins is an iOS application that helps users to find places around the Cal Poly Campus!
 
-Poly Pins uses augmented reality to show the users various pins.
+Poly Pins uses augmented reality (AR) and Google Cloud Firebase (Cloud Database Hosting) to show the users various pins.
 
 Each pin represents places that can be found on campus.
 
@@ -14,6 +16,7 @@ The user can filter the pins by type shown to the user by selecting the icons at
 
 The types of places to filter are: Food, Housing, Bathrooms, Recreation, Hydration, Buildings.
 
+Created using XCode
 -----------------------------------------
 Sources for the images used:
 -----------------------------------------
@@ -77,7 +80,7 @@ tp: https://d30y9cdsu7xlg0.cloudfront.net/png/35933-200.png
 waterbottle: http://www.freepngimg.com/thumb/water_bottle/2-2-water-bottle-free-download-png-thumb.png
 
 #####################
-Helpful rescources:
+Helpful rescources used:
 
 https://medium.com/@yatchoi/getting-started-with-arkit-real-life-waypoints-1707e3cb1da2
 
