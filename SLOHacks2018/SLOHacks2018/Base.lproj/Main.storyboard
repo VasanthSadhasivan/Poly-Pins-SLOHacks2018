@@ -17,15 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <arskView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EO5-fy-WZq">
+                            <arskView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EO5-fy-WZq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </arskView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KDU-nj-fBm">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <rect key="contentStretch" x="0.0" y="0.050000000000000003" width="1" height="1"/>
                                 <items>
+                                    <barButtonItem title="        " id="o4l-5h-KHz"/>
                                     <barButtonItem title="🍕" id="rMI-c3-STv">
                                         <connections>
                                             <action selector="Food:" destination="BV1-FR-VrT" id="0fr-I1-ghF"/>
@@ -60,6 +60,10 @@
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EO5-fy-WZq" firstAttribute="width" secondItem="nHr-Oa-lpI" secondAttribute="width" id="Uj0-pG-55G"/>
+                            <constraint firstItem="EO5-fy-WZq" firstAttribute="height" secondItem="nHr-Oa-lpI" secondAttribute="height" id="jz9-ck-BwI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Vwr-3f-EZN"/>
                     </view>
                     <connections>

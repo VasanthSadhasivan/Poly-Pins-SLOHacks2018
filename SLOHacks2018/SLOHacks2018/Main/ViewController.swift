@@ -38,7 +38,7 @@ class ViewController: UIViewController, ARSKViewDelegate, CLLocationManagerDeleg
         Helper.getPlaces(sceneView: sceneView)
     }
     @IBAction func Buildings(_ sender: Any) {
-        Helper.filterType = "buildings"
+        Helper.filterType = "building"
         Helper.getPlaces(sceneView: sceneView)
     }
     
@@ -46,18 +46,6 @@ class ViewController: UIViewController, ARSKViewDelegate, CLLocationManagerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        //self.navigationController?.isToolbarHidden = false
-//        var items = [UIBarButtonItem]()
-//        items.append(
-//            UIBarButtonItem(title: "Food", style: .plain, target: self, action: #selector(Food(_:))
-//        ))
-//        items.append(
-//            UIBarButtonItem(title: "housing", style: .plain, target: self, action: #selector(Housing(_:))
-//        ))
-//
-//        //self.navigationController?.toolbar.items = items
-//        toolBar.setItems(items, animated: false)
-//        //toolBar.backgroundColor = UIColor.green
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,16 +53,17 @@ class ViewController: UIViewController, ARSKViewDelegate, CLLocationManagerDeleg
         Helper.startLocationService(delegate: self as CLLocationManagerDelegate)
         Helper.sceneViewSetup(delegate: self as ARSKViewDelegate, sceneView: sceneView)
         Helper.getPlaces(sceneView: sceneView)
-
     }
     
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
         // Create and configure a node for the anchor added to the view's session.
-        let labelNode = SKLabelNode(text: Helper.anchorDicked[anchor.identifier]?.getImageURL())
         let temp = UIImage(named: (Helper.anchorDicked[anchor.identifier]?.getImageURL())!)
         print(Helper.anchorDicked[anchor.identifier]?.getImageURL())
         let image = Helper.resizeImage(image: temp!, targetSize: CGSize(width: temp!.size.width*7, height: temp!.size.height*7))
-        let spriteNode = SKSpriteNode(texture: SKTexture(image: image))
+        
+        let distance = Helper.myLocation?.distance(from: CLLocation(latitude: CLLocationDegrees((Helper.anchorDicked[anchor.identifier]?.getLatitude())!), longitude: CLLocationDegrees((Helper.anchorDicked[anchor.identifier]?.getLongitude())!)))
+        
+        let spriteNode = CustomNode(texture: SKTexture(image: image), distance: Float(distance!))
         return spriteNode
     }
     
